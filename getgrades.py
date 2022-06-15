@@ -10,7 +10,7 @@ def getgrades():
     assignmentnumber = []
     global gradesrightnow
     global assignmentnumber
-    username = 'G6.GP'
+    username = 'REDACTED'
     password = passDecode('[REDACTED]')
     browser = webdriver.PhantomJS(executable_path='/usr/local/bin/phantomjs')
     browser.get("https://focus.pcsb.org")
@@ -75,9 +75,9 @@ def email(oneortwo):
     Inquiry = "Inquiry Skills: " + currentgrades[6]
     if oneortwo == 1 or oneortwo == 2:
         if oneortwo == 1:
-            msg = "Hello, Miles!\n\nHere are your current grades:\n\n" + English + "\n" + Algebra + "\n" + History + "\n" + Spanish + "\n" + Human + "\n" + Biology + "\n" + Inquiry + "\n\n" + "If you have any concerns, please note that this is just you talking to yourself (because I'm that cool), so you may want to contact a teacher or just anybody else."
+            msg = "Hello, {name}!\n\nHere are your current grades:\n\n" + English + "\n" + Algebra + "\n" + History + "\n" + Spanish + "\n" + Human + "\n" + Biology + "\n" + Inquiry + "\n\n" + "If you have any concerns, please note that this is just you talking to yourself (because I'm that cool), so you may want to contact a teacher or just anybody else."
         if oneortwo == 2:
-            msg = "Hello, Miles!\n\nYour grades have changed!  It is absolutely incumbent upon you (if you're still on the first vocab list, you just got to practice a vocab word, yay) to check Focus immediately (https://focus.pcsb.org).  However, because there's no way you can wait for it to load before you see numbers, here are your current grades:\n\n" + English + "\n" + Algebra + "\n" + History + "\n" + Spanish + "\n" + Human + "\n" + Biology + "\n" + Inquiry + "\n\n" + "If you have any concerns, please note that this is just you talking to yourself (because I'm that cool), so you may want to contact a teacher or just anybody else."
+            msg = "Hello, {name}!\n\nYour grades have changed!  It is absolutely incumbent upon you (if you're still on the first vocab list, you just got to practice a vocab word, yay) to check Focus immediately (https://focus.pcsb.org).  However, because there's no way you can wait for it to load before you see numbers, here are your current grades:\n\n" + English + "\n" + Algebra + "\n" + History + "\n" + Spanish + "\n" + Human + "\n" + Biology + "\n" + Inquiry + "\n\n" + "If you have any concerns, please note that this is just you talking to yourself (because I'm that cool), so you may want to contact a teacher or just anybody else."
         server = smtplib.SMTP('smtp.gmail.com', 587)
         server.starttls()
         server.ehlo()
